@@ -62,7 +62,7 @@ protocol Performable {
 
 /// A scheduled, performable task.
 public class Job: Performable {
-    public typealias Action = (Void) throws -> Void
+    public typealias Action = () throws -> Void
     public typealias ErrorCallback = (Error) -> RecoverStrategy
 
     /// The job's name.
@@ -122,7 +122,7 @@ public class Job: Performable {
         }
         
         do {
-            try action(Void)
+            try action()
             Jobs.shared.queue(self)
         } catch {
             guard
@@ -265,7 +265,7 @@ public final class Jobs {
     ) {
         let workItem = DispatchWorkItem {
             do {
-                try action(Void)
+                try action()
             } catch {
                 errorHandler?(error)
             }
