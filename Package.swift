@@ -5,7 +5,8 @@ let package = Package(
     name: "Jobs",
     targets: [
         .target(
-            name: "Jobs"
+            name: "Jobs",
+            path: "Sources"
         ),
         .testTarget(
             name: "JobsTests",
