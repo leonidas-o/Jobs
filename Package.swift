@@ -2,5 +2,13 @@
 import PackageDescription
 
 let package = Package(
-    name: "Jobs"
+    name: "Jobs",
+    targets: [
+        .target(
+            name: "Jobs",
+            dependencies: []),
+        .testTarget(
+            name: "JobsTests",
+            dependencies: ["Jobs"]),
+    ]
 )
