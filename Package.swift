@@ -5,10 +5,11 @@ let package = Package(
     name: "Jobs",
     targets: [
         .target(
-            name: "Jobs",
-            dependencies: []),
+            name: "Jobs"
+        ),
         .testTarget(
             name: "JobsTests",
-            dependencies: ["Jobs"]),
+            dependencies: ["Jobs"]
+        ),
     ]
 )
