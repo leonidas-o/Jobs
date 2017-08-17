@@ -122,7 +122,7 @@ public class Job: Performable {
         }
         
         do {
-            try action()
+            try action(Void)
             Jobs.shared.queue(self)
         } catch {
             guard
@@ -265,7 +265,7 @@ public final class Jobs {
     ) {
         let workItem = DispatchWorkItem {
             do {
-                try action()
+                try action(Void)
             } catch {
                 errorHandler?(error)
             }
